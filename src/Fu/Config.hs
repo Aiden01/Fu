@@ -15,7 +15,7 @@ import           System.Directory               ( doesFileExist )
 parseConfig :: IO (Maybe Config)
 parseConfig = doesFileExist "~/fu.json" >>= \case
   True  -> decodeFileStrict "~/fu.json"
-  False -> Nothing
+  False -> pure Nothing
 
 getConfig :: FuContext (Maybe Config)
 getConfig = liftIO parseConfig

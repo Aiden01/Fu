@@ -16,10 +16,13 @@ import           Fu.Config                      ( getConfig
 import           Control.Monad.Reader
 import           Fu.Utils
 import           System.IO
+import           System.Console.ANSI
 
 prompt :: String -> IO String
 prompt text = do
+  setSGR [SetColor Foreground Vivid Blue]
   putStr text
+  setSGR [Reset]
   hFlush stdout
   getLine
 
