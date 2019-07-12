@@ -33,7 +33,7 @@ library:
   source-dirs: src
 
 executables:
-  fu-exe:
+  fu:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
